@@ -5,7 +5,7 @@ Arrumar - Agir - Garantir
 """
 from pytest import mark, raises
 
-from notas_musicais.escala import ESCALAS, NOTAS, escala
+from notas_musicais.escalas import ESCALAS, NOTAS, escala
 
 
 def test_deve_funcionar_notas_minusculas():
