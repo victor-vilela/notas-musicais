@@ -46,15 +46,18 @@ def test_deve_retornar_erro_escala_nao_existe():
 
 
 @mark.parametrize(
-    'tonica, esperado',
+    'tonica, tonalidade, esperado',
     [
-        ('C', ['C', 'D', 'E', 'F', 'G', 'A', 'B']),
-        ('C#', ['C#', 'D#', 'F', 'F#', 'G#', 'A#', 'C']),
-        ('F', ['F', 'G', 'A', 'A#', 'C', 'D', 'E']),
+        ('C', 'maior', ['C', 'D', 'E', 'F', 'G', 'A', 'B']),
+        ('C#', 'maior', ['C#', 'D#', 'F', 'F#', 'G#', 'A#', 'C']),
+        ('F', 'maior', ['F', 'G', 'A', 'A#', 'C', 'D', 'E']),
+        ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
+        ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
+        ('F', 'menor', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
     ],
 )
-def test_deve_retornar_notas_corretas(tonica, esperado):
-    resultado = escala(tonica, 'maior')
+def test_deve_retornar_notas_corretas(tonica, tonalidade, esperado):
+    resultado = escala(tonica, tonalidade)
     assert resultado['notas'] == esperado
 
 
