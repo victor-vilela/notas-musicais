@@ -35,7 +35,7 @@ def semitom(nota, *, intervalo):
         >>> semitom('C', intervalo=+1)
         'C#'
 
-        >>> semitom('c', intervalo=-1)
+        >>> semitom('C', intervalo=-1)
         'B'
     """
     pos = NOTAS.index(nota) + intervalo
