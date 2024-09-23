@@ -43,3 +43,4 @@ def test_acorde_deve_retornar_graus_correspondentes(cifra, esperado):
     _, graus = acorde(cifra).values()
 
     assert esperado == graus
+
